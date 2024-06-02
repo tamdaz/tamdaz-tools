@@ -8,6 +8,7 @@
 		"build": "vite build",
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\" --use-tabs --tab-width=4",
+		"test": "playwright test",
 		"preview": "vite preview"
 	},
 	"dependencies": {
