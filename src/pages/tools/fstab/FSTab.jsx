@@ -3,7 +3,7 @@ import FSTabForm from "./FSTabForm";
 import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/default-highlight";
 import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-import Alert from "./../../../components/Alert";
+import Alert from "../../../components/Alert";
 
 /**
  * FSTab page

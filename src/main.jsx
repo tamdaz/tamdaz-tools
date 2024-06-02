@@ -4,7 +4,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Root from "./Root";
 import Home from "./pages/Home";
-import FSTab from "./pages/generators/fstab/FSTab";
+
+import FSTab from "./pages/tools/fstab/FSTab";
 
 const router = createBrowserRouter([
 	{
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
 				path: "/",
 				element: <Home />,
 			}, {
-				path: "/generator/fstab",
+				path: "/tools/fstab-generator",
 				element: <FSTab />
 			}
 		],
