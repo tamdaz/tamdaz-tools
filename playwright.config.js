@@ -5,6 +5,6 @@ dotenv.config();
 
 export default defineConfig({
     use: {
-        baseURL: process.env.PROJECT_URL,
+        baseURL: process.env.PROJECT_URL
     }
 })
