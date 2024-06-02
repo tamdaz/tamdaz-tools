@@ -118,7 +118,9 @@ function FSTab() {
         <div style={{ tabSize: 25 }}>
             <SyntaxHighlighter language="bash" style={monokai} onClick={copyOutput}>
                 {
-                    tabs.length !== 0 ? tabs.map(({ device, mountPoint, fileSystem, options, dump, verify }) => {
+                    tabs.length !== 0 ? 
+                    "#<file system>\t<dir>\t<type>\t<options\t<dump>\t<pass>\n" +
+                    tabs.map(({ device, mountPoint, fileSystem, options, dump, verify }) => {
                         return `${device}\t${mountPoint}\t${fileSystem}\t${options}\t${dump ? 1 : 0}\t${verify}`
                     }).join("\n") : " "
                 }
