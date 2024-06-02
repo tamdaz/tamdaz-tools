@@ -1,4 +1,23 @@
-import React, { useEffect, useId } from "react";
+import React, { useEffect } from "react";
+
+/**
+ * Allows to select filesystem
+ * 
+ * @param {Object} obj
+ * @param {string} obj.name
+ * @param {string} obj.value
+ * @param {string} obj.onChange
+ */
+function FileSystemSelect({ name, value, onChange }) {
+    const filesystems = [
+        "btrfs", "vfat", "ext2", "ext3", "ext4",
+        "hfs", "jfs", "ntfs", "reiserfs", "udf", "xfs", "zfs"
+    ]
+
+    return <select name={name} onChange={onChange} value={value}>
+        { filesystems.map(v => <option value={ v } key={v}>{ v }</option>) }
+    </select>
+}
 
 /**
  * @param {Object} obj
@@ -37,15 +56,7 @@ function FSTabForm({ id, updateTab, deleteTab }) {
     return <div className="grid grid-cols-7 gap-4 pb-4">
         <input onChange={handleUpdate} name="device" type="text" placeholder="/dev/sda1" value={tab.device} />
         <input onChange={handleUpdate} name="mountPoint" type="text" placeholder="/" value={tab.mountPoint} />
-        <select name="fileSystem" onChange={handleUpdate} value={tab.fileSystem}>
-            <option value="vfat">vfat</option>
-            <option value="ext2">ext2</option>
-            <option value="ext3">ext3</option>
-            <option value="ext4">ext4</option>
-            <option value="xfs">xfs</option>
-            <option value="btrfs">btrfs</option>
-            <option value="ntfs">ntfs</option>
-        </select>
+        <FileSystemSelect name="fileSystem" onChange={handleUpdate} value={tab.fileSystem} />
         <input name="options" onChange={handleUpdate} type="text" placeholder="defaults" value={tab.options} />
         <input name="dump" onChange={handleUpdate} type="checkbox" className="scale-50" value={tab.dump} />
         <select name="verify" onChange={handleUpdate} value={tab.verify}>
