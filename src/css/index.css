@@ -1,0 +1,23 @@
+@import "./components/alert.css";
+
+@import 'https://fonts.cdnfonts.com/css/sf-mono';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+    @apply text-6xl font-bold mb-4;
+}
+
+h2 {
+    @apply text-4xl font-medium mb-4;
+}
+
+input, select {
+    @apply px-3 py-2 border outline-none bg-white;
+}
+
+code, pre {
+    font-family: 'SF Mono', monospace;
+}
