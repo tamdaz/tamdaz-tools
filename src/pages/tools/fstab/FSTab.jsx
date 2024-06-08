@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import FSTabForm from "./FSTabForm";
 import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/default-highlight";
 import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { renderToStaticMarkup, renderToString } from "react-dom/server";
+import { renderToString } from "react-dom/server";
 
 import Alert from "../../../components/Alert";
 
@@ -135,7 +135,7 @@ function FSTab() {
 			<Alert
 				type="warning"
 				title="Avertissement sur la configuration de fstab."
-				description="Avant de faire des modifications dans le fichier /etc/fstab, assurez-vous de garder l'ancienne version de ce fichier pour éviter les erreurs."
+				description="Avant de faire des modifications dans le fichier /etc/fstab, assurez-vous de garder l'ancienne version de ce fichier pour éviter d'obtenir des erreurs."
 			/>
 			<div className="grid grid-cols-7 gap-8 text-center py-4">
 				<span>Périphérique</span>
@@ -176,11 +176,11 @@ function FSTab() {
 					{renderToString(<FSTabOutput />)}
 				</SyntaxHighlighter>
 			</div>
-			{
-				(hasBeenCopied === true) ?
-					<Alert type="success" description="Copié avec succès." /> :
-					<Alert description="Vous pouvez cliquer copier ce résultat en cliquant dessus." />
-			}
+			{hasBeenCopied === true ? (
+				<Alert type="success" description="Copié avec succès." />
+			) : (
+				<Alert description="Vous pouvez copier ce résultat en cliquant dessus." />
+			)}
 		</>
 	);
 }

@@ -10,9 +10,11 @@ function Root() {
 	 * Display a minimal alert to warn
 	 */
 	const DisplayDevMode = () => {
-		return <div className="w-full px-4 py-2 text-center bg-yellow-700 pattern-size-16">
-			Site en développement...
-		</div>
+		return (
+			<div className="w-full px-4 py-2 text-center bg-yellow-700 pattern-size-16">
+				Site en développement...
+			</div>
+		);
 	};
 
 	return (
@@ -24,10 +26,17 @@ function Root() {
 				</div>
 				<div className="col-span-6 xl:col-span-5">
 					<DisplayDevMode />
-					<Marquee autoFill={true} gradient={true} gradientColor="rgb(23,23,23)" className="visible xl:invisible">
+					<Marquee
+						autoFill={true}
+						gradient={true}
+						gradientColor="rgb(23,23,23)"
+						className="visible xl:invisible"
+					>
 						<div className="flex gap-8 mr-8 my-4">
 							<Link to="/">Accueil</Link>
-							<Link to="/tools/fstab-generator">Générateur FStab</Link>
+							<Link to="/tools/fstab-generator">
+								Générateur FStab
+							</Link>
 						</div>
 					</Marquee>
 					<div className="p-8">

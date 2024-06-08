@@ -22,11 +22,14 @@ function FileSystemSelect({ name, value, onChange }) {
 		"udf",
 		"xfs",
 		"zfs",
+		"swap",
+		"minix",
+		"udf",
 	];
 
 	return (
 		<select name={name} onChange={onChange} value={value}>
-			{filesystems.map((v) => (
+			{filesystems.sort().map((v) => (
 				<option value={v} key={v}>
 					{v}
 				</option>

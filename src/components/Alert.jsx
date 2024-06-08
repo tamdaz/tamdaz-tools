@@ -8,6 +8,11 @@
  * @param {"info"|"success"|"warn"|"error"} obj.type Alert type
  */
 export default function Alert({ title = "", description = "", type = "info" }) {
+	/**
+	 * Allows to get the icon name.
+	 *
+	 * @return {string}
+	 */
 	const getIcon = () => {
 		const iconsName = {
 			info: "info",
@@ -21,6 +26,11 @@ export default function Alert({ title = "", description = "", type = "info" }) {
 		return iconsName[type] ?? "unknown";
 	};
 
+	/**
+	 * Allows to get the color name.
+	 *
+	 * @return {string}
+	 */
 	const getColor = () => {
 		const colorsName = {
 			info: "info",
