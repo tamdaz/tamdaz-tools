@@ -11,7 +11,7 @@ import Alert from "../../../components/Alert";
  */
 function FSTab() {
 	const [id, setId] = React.useState(1);
-	const [tabSize, setTabSize] = React.useState(8);
+	const [hasBeenCopied, setHasBeenCopied] = React.useState(false);
 
 	const [rows, setRows] = React.useState([
 		{
@@ -25,7 +25,7 @@ function FSTab() {
 		},
 	]);
 
-	document.title = "Générateur du fichier fstab";
+	document.title = "Générateur FSTab";
 
 	useEffect(() => {
 		setId(id + 1);
@@ -123,7 +123,10 @@ function FSTab() {
 	 * @param {Event & { target: HTMLDivElement }} e
 	 */
 	const copyOutput = (e) => {
+		setHasBeenCopied(true);
 		navigator.clipboard.writeText(e.target.textContent);
+
+		setTimeout(() => setHasBeenCopied(false), 3000);
 	};
 
 	return (
@@ -173,7 +176,11 @@ function FSTab() {
 					{renderToString(<FSTabOutput />)}
 				</SyntaxHighlighter>
 			</div>
-			<Alert description="Vous pouvez cliquer copier ce résultat en cliquant dessus." />
+			{
+				(hasBeenCopied === true) ?
+					<Alert type="success" description="Copié avec succès." /> :
+					<Alert description="Vous pouvez cliquer copier ce résultat en cliquant dessus." />
+			}
 		</>
 	);
 }
