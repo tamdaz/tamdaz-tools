@@ -1,6 +1,6 @@
-@import "./components/alert.css";
-
 @import 'https://fonts.cdnfonts.com/css/sf-mono';
+
+@import "./components/alert.css";
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +15,11 @@ h2 {
 }
 
 input, select {
-    @apply px-3 py-2 border outline-none bg-white;
+    @apply px-3 py-2 border outline-none bg-transparent border-neutral-500/30;
+}
+
+option {
+    @apply bg-black;
 }
 
 code, pre {

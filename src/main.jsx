@@ -14,10 +14,11 @@ const router = createBrowserRouter([
 			{
 				path: "/",
 				element: <Home />,
-			}, {
+			},
+			{
 				path: "/tools/fstab-generator",
-				element: <FSTab />
-			}
+				element: <FSTab />,
+			},
 		],
 	},
 ]);
@@ -25,5 +26,5 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<RouterProvider router={router} />
-	</React.StrictMode>
+	</React.StrictMode>,
 );
